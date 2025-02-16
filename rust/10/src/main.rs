@@ -2,7 +2,6 @@ use relative_path::RelativePath;
 use std::env;
 use std::fs;
 use std::time::Instant;
-use std::collections::VecDeque;
 
 fn knot_hash(cards: Vec<i64>, lengths: Vec<i64>, rounds: i64) -> Vec<i64> {
     let mut curr_pos: usize = 0;
