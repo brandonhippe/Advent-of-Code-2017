@@ -109,6 +109,7 @@ fn part1(contents: String) -> i64 {
         instructions: contents.lines().map(|l| l.trim()).collect(),
         ..Default::default()
     };
+    
     return program.run_p1();
 }
 
