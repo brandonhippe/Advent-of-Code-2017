@@ -29,7 +29,7 @@ def part2(data):
     """ 2017 Day 17 Part 2
     """
 
-    num = int(data[0])
+    num = int(data[0]) + 1
     zero_ix = 0
     after_zero = None
     for i in range(1, 50_000_001):
