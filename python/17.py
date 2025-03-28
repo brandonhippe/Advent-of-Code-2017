@@ -40,14 +40,6 @@ def part2(data):
     assert after_zero is not None
     return after_zero
 
-    buf = deque([])
-
-    for i in range(50_000_001):
-        buf.rotate(-num)
-        buf.append(i)
-
-    return buf[(buf.index(0) + 1) % len(buf)]
-
 
 def main(input_path: Optional[Path | str]=None, verbose: bool=False) -> Tuple[Tuple[Any, float]]:
     if not input_path:
