@@ -17,16 +17,18 @@ fn part1(contents: String) -> i64 {
 }
 
 fn part2(contents: String) -> i64 {
-    let step_amt = contents.trim().parse::<usize>().unwrap() + 1;
-    let mut buff: VecDeque<i64> = VecDeque::from(vec![0]);
-
+    let step_amt = contents.trim().parse::<i64>().unwrap() + 1;
+    let mut zero_ix: i64 = 0;
+    let mut after_zero: Option<i64> = None;
+    
     for insert in 1..=50_000_000 {
-        buff.rotate_left(step_amt % buff.len());
-        buff.push_front(insert)
+        zero_ix = (((zero_ix - step_amt + 1) % insert) + insert) % insert;
+        if zero_ix == insert - 1 {
+            after_zero = Some(insert);
+        }
     }
-
-    let zero_ix: usize = buff.iter().enumerate().filter(|(_ix, v)| **v == 0).map(|(ix, _v)| ix).next().unwrap();
-    return buff[(zero_ix + 1) % buff.len()];
+    
+    return after_zero.unwrap();
 }
 
 #[cfg(test)]

@@ -30,6 +30,16 @@ def part2(data):
     """
 
     num = int(data[0])
+    zero_ix = 0
+    after_zero = None
+    for i in range(1, 50_000_001):
+        zero_ix = (zero_ix - num + 1) % i
+        if zero_ix == i - 1:
+            after_zero = i
+
+    assert after_zero is not None
+    return after_zero
+
     buf = deque([])
 
     for i in range(50_000_001):
