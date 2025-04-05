@@ -15,7 +15,7 @@ def part1(data):
     18
     """
 
-    lines = [[int(x) for x in re.findall('-?\d+', line)] for line in data]
+    lines = [[int(x) for x in re.findall(r'-?\d+', line)] for line in data]
 
     return sum([max(line) - min(line) for line in lines])
 
@@ -27,7 +27,7 @@ def part2(data):
     9
     """
 
-    lines = [[int(x) for x in re.findall('-?\d+', line)] for line in data]
+    lines = [[int(x) for x in re.findall(r'-?\d+', line)] for line in data]
 
     return sum([div(line) for line in lines])
 

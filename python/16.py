@@ -23,10 +23,10 @@ def part1(data, maxLetter = 16):
 
     for d in data[0].split(','):
         if d[0] == 's':
-            n = int(re.findall('\d+', d)[0])
+            n = int(re.findall(r'\d+', d)[0])
             programs = programs[-n:] + programs[:-n]
         elif d[0] == 'x':
-            nums = [int(x) for x in re.findall('\d+', d)]
+            nums = [int(x) for x in re.findall(r'\d+', d)]
             programs[nums[0]], programs[nums[1]] = programs[nums[1]], programs[nums[0]]
         elif d[0] == 'p':
             nums = (programs.index(d[1]), programs.index(d[-1]))
@@ -49,10 +49,10 @@ def part2(data, maxLetter = 16, dances = 1_000_000_000):
     while i < dances:
         for d in data[0].split(','):
             if d[0] == 's':
-                n = int(re.findall('\d+', d)[0])
+                n = int(re.findall(r'\d+', d)[0])
                 programs = programs[-n:] + programs[:-n]
             elif d[0] == 'x':
-                nums = [int(x) for x in re.findall('\d+', d)]
+                nums = [int(x) for x in re.findall(r'\d+', d)]
                 programs[nums[0]], programs[nums[1]] = programs[nums[1]], programs[nums[0]]
             elif d[0] == 'p':
                 nums = (programs.index(d[1]), programs.index(d[-1]))

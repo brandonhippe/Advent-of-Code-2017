@@ -51,7 +51,7 @@ def part2(data):
         registers['PC'] += 1
 
     h = 0
-    stepSize = int(re.findall('\d+', data[-2])[0])
+    stepSize = int(re.findall(r'\d+', data[-2])[0])
     b, c = registers['b'], registers['c']
     primes = SieveOfEratosthenes(c)
 

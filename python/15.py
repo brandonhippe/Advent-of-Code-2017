@@ -15,7 +15,7 @@ def part1(data):
     588
     """
 
-    a, b = [[int(x) for x in re.findall('\d+', line)][0] for line in data]
+    a, b = [[int(x) for x in re.findall(r'\d+', line)][0] for line in data]
     aMult, bMult = 16807, 48271
     
     count = 0
@@ -35,7 +35,7 @@ def part2(data):
     309
     """
 
-    a, b = [[int(x) for x in re.findall('\d+', line)][0] for line in data]
+    a, b = [[int(x) for x in re.findall(r'\d+', line)][0] for line in data]
     aMult, bMult = 16807, 48271
 
     count = 0

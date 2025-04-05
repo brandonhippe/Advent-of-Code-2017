@@ -15,7 +15,7 @@ def part1(data):
     0
     """
 
-    particles = [Particle([int(x) for x in re.findall('-?\d+', line)], i) for i, line in enumerate(data)]
+    particles = [Particle([int(x) for x in re.findall(r'-?\d+', line)], i) for i, line in enumerate(data)]
 
     closest = particles[particles.index(closestParticle(particles)) - 1]
     i = 0
@@ -36,7 +36,7 @@ def part2(data):
     1
     """
 
-    particles = [Particle([int(x) for x in re.findall('-?\d+', line)], i) for i, line in enumerate(data)]
+    particles = [Particle([int(x) for x in re.findall(r'-?\d+', line)], i) for i, line in enumerate(data)]
 
     pLen = len(particles) + 1
     i = 0

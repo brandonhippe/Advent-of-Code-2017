@@ -17,7 +17,7 @@ def part1(data):
     """
 
     state = data[0].split('state ')[1][:-1]
-    iterations = int(re.findall('\d+', data[1])[0])
+    iterations = int(re.findall(r'\d+', data[1])[0])
 
     stateRules = {}
     for i, line in enumerate(data[3:]):        
@@ -25,9 +25,9 @@ def part1(data):
             currState = line.split('state ')[1][:-1]
             stateRules[currState] = Rule()
         elif i % 10 in [1, 5]:
-            currValue = int(re.findall('\d+', line)[0])
+            currValue = int(re.findall(r'\d+', line)[0])
         elif i % 10 in [2, 6]:
-            stateRules[currState].operations[currValue].append(int(re.findall('\d+', line)[0]))
+            stateRules[currState].operations[currValue].append(int(re.findall(r'\d+', line)[0]))
         elif i % 10 in [3, 7]:
             stateRules[currState].operations[currValue].append(1 if 'right' in line else -1)
         elif i % 10 in [4, 8]:

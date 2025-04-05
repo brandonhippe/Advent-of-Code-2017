@@ -15,7 +15,7 @@ def part1(data):
     5
     """
 
-    banks = [int(x) for x in re.findall('\d+', data[0])]
+    banks = [int(x) for x in re.findall(r'\d+', data[0])]
 
     observed = set()
     steps = 0
@@ -44,7 +44,7 @@ def part2(data):
     4
     """
 
-    banks = [int(x) for x in re.findall('\d+', data[0])]
+    banks = [int(x) for x in re.findall(r'\d+', data[0])]
 
     observed = set()
     steps = 0

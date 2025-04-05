@@ -18,7 +18,7 @@ def part1(data):
     programs = [Program(i) for i in range(len(data))]
 
     for i, line in enumerate(data):
-        ps = [int(x) for x in re.findall('\d+', line.split('> ')[1])]
+        ps = [int(x) for x in re.findall(r'\d+', line.split('> ')[1])]
         for p in ps:
             programs[i].pipes.add(programs[p])
             programs[p].pipes.add(programs[i])
@@ -39,7 +39,7 @@ def part2(data):
     programs = [Program(i) for i in range(len(data))]
 
     for i, line in enumerate(data):
-        ps = [int(x) for x in re.findall('\d+', line.split('> ')[1])]
+        ps = [int(x) for x in re.findall(r'\d+', line.split('> ')[1])]
         for p in ps:
             programs[i].pipes.add(programs[p])
             programs[p].pipes.add(programs[i])

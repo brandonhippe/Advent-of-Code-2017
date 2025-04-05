@@ -15,7 +15,7 @@ def part1(data):
     24
     """
 
-    scanners = {k: v for k, v in [[int(x) for x in re.findall('\d+', line)] for line in data]}
+    scanners = {k: v for k, v in [[int(x) for x in re.findall(r'\d+', line)] for line in data]}
     return sum(scanner * depth if not scanner % (2 * (depth - 1)) else 0 for scanner, depth in scanners.items())
 
 
@@ -26,7 +26,7 @@ def part2(data):
     10
     """
 
-    scanners = {k: v for k, v in [[int(x) for x in re.findall('\d+', line)] for line in data]}
+    scanners = {k: v for k, v in [[int(x) for x in re.findall(r'\d+', line)] for line in data]}
 
     i = 0
     finished = False

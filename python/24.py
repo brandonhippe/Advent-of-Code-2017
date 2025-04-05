@@ -15,7 +15,7 @@ def part1(data):
     31
     """
 
-    return strongest(tuple(Component([int(x) for x in re.findall('\d+', line)]) for line in data), 0, 0)[0]
+    return strongest(tuple(Component([int(x) for x in re.findall(r'\d+', line)]) for line in data), 0, 0)[0]
 
 
 def part2(data):
@@ -25,7 +25,7 @@ def part2(data):
     19
     """
 
-    return strongest(tuple(Component([int(x) for x in re.findall('\d+', line)]) for line in data), 0, 0)[-1]
+    return strongest(tuple(Component([int(x) for x in re.findall(r'\d+', line)]) for line in data), 0, 0)[-1]
 
 
 class Component:

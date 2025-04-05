@@ -54,7 +54,7 @@ def part2(data):
 
 class Program:
     def __init__(self, programText):
-        self.weight = int(re.findall('\d+', programText)[0])
+        self.weight = int(re.findall(r'\d+', programText)[0])
         self.name = programText.split(' ')[0]
         self.subPrograms = []
         if '->' in programText:
